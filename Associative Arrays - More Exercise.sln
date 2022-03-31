@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Ranking", "Associative Arrays - More Exercise\01. Ranking.csproj", "{111D92A4-353D-46B4-B309-478F34A8CF5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Ranking", "Associative Arrays - More Exercise\01. Ranking.csproj", "{111D92A4-353D-46B4-B309-478F34A8CF5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Judge", "02. Judge\02. Judge.csproj", "{B4C324DD-FEA9-4467-956D-6F7EBB2A2EA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. Judge", "02. Judge\02. Judge.csproj", "{B4C324DD-FEA9-4467-956D-6F7EBB2A2EA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. MOBA Challenger", "03. MOBA Challenger\03. MOBA Challenger.csproj", "{451B17A0-629A-4C54-9268-71A9B86F473B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. MOBA Challenger", "03. MOBA Challenger\03. MOBA Challenger.csproj", "{451B17A0-629A-4C54-9268-71A9B86F473B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Snowwhite", "04. Snowwhite\04. Snowwhite.csproj", "{6F620DFF-B01C-44EF-A647-C8D7471933BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{451B17A0-629A-4C54-9268-71A9B86F473B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{451B17A0-629A-4C54-9268-71A9B86F473B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{451B17A0-629A-4C54-9268-71A9B86F473B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F620DFF-B01C-44EF-A647-C8D7471933BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F620DFF-B01C-44EF-A647-C8D7471933BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F620DFF-B01C-44EF-A647-C8D7471933BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F620DFF-B01C-44EF-A647-C8D7471933BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
