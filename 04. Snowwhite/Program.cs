@@ -47,7 +47,16 @@ namespace _04._Snowwhite
                 }
             }
 
-            foreach (var dwarf in dwarfList.OrderByDescending(x => x.Physics).ThenByDescending(x => x.HatColor.Max()).ThenByDescending(x => x.Name))
+            var orderedDwarfList = dwarfList
+                .OrderByDescending(x => x.Physics);
+
+            var test = orderedDwarfList.GroupBy(x => x.HatColor).OrderByDescending(x=>x.Count()).ToList();
+
+
+                //.ThenByDescending(x => x.HatColor.Count())
+                //.ThenByDescending(x => x.Name);
+
+            foreach (var dwarf in orderedDwarfList)
             {
                 var currentName = dwarf.Name;
                 var currentHatColor = dwarf.HatColor;
@@ -62,29 +71,40 @@ namespace _04._Snowwhite
             var currentHatColor = currentDwarf.HatColor;
             var currentPhysics = currentDwarf.Physics;
             List<Dwarf> CurrentdwarfList = dwarfList;
-
-
-            foreach (var item in dwarfList)
+            if (dwarfList.Any(x => x.Name == currentName && x.HatColor == currentHatColor))
             {
-                if (item.Name == currentName && item.HatColor != currentHatColor)
+                var existingDwarf = dwarfList.First(x => x.Name == currentName && x.HatColor == currentHatColor);
+                if (existingDwarf.Physics < currentPhysics)
                 {
-                    CurrentdwarfList.Add(currentDwarf);
-                    break;
-                }
-                else if(item.Name == currentName && item.HatColor == currentHatColor)
-                {
-                    if (item.Physics < currentPhysics)
-                    {
-                        item.Physics = currentPhysics;
-                        break;
-                    }
-                }
-                else
-                {
-                    CurrentdwarfList.Add(currentDwarf);
-                    break;
+                    existingDwarf.Physics = currentPhysics;
                 }
             }
+            else
+            {
+                dwarfList.Add(currentDwarf);
+            }
+
+            //foreach (var item in CurrentdwarfList)
+            //{
+            //    if (item.Name == currentName && item.HatColor != currentHatColor)
+            //    {
+            //        dwarfList.Add(currentDwarf);
+            //        break;
+            //    }
+            //    else if(item.Name == currentName && item.HatColor == currentHatColor)
+            //    {
+            //        if (item.Physics < currentPhysics)
+            //        {
+            //            item.Physics = currentPhysics;
+            //            break;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        dwarfList.Add(currentDwarf);
+            //        break;
+            //    }
+            //}
         }
     }
 }
