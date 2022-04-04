@@ -24,7 +24,8 @@ namespace _03.ThirthProblem
                     int neededFood = int.Parse(actions[2]);
                     string area = actions[3];
 
-                    if (!animalsDict.ContainsKey(animalName) && hungryAnimalsAreas.ContainsKey(area))
+
+                    if (!animalsDict.ContainsKey(animalName) && !hungryAnimalsAreas.ContainsKey(area))
                     {
                         hungryAnimalsAreas.Add(area, neededFood);
                     }
@@ -33,6 +34,10 @@ namespace _03.ThirthProblem
                         if (!hungryAnimalsAreas.ContainsKey(area))
                         {
                             hungryAnimalsAreas.Add(area, 1);
+                        }
+                        else
+                        {
+                            hungryAnimalsAreas.Remove(area);
                         }
                     }
                     Add(animalsDict, animalName, neededFood);
@@ -55,7 +60,7 @@ namespace _03.ThirthProblem
             {
                 var currentName = item.Key;
                 var currentQuantity = item.Value;
-                Console.WriteLine($" {currentName} -> {currentQuantity}g");
+                Console.WriteLine($"{currentName} -> {currentQuantity}g");
             }
 
             Console.WriteLine("Areas with hungry animals:");
@@ -63,9 +68,11 @@ namespace _03.ThirthProblem
             foreach (var item in hungryAnimalsAreas)
             {
                 var areaName = item.Key;
-                var numberOfHungryAnimals = item.Value;
+               
+                var numberOfHungryAnimals = hungryAnimalsAreas.Count;
+                
 
-                Console.WriteLine($" {areaName}: {numberOfHungryAnimals}");
+                Console.WriteLine($"{areaName}: {numberOfHungryAnimals}");
             }
         }
         static void Feed(Dictionary<string, int> animalsDict, string animalName, int food)
